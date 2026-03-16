@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InterviewMentor — App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="app-body">
+
+  <!-- Sidebar -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="sidebar-brand">
+        <span class="brand-icon">▶</span>
+        <span>InterviewMentor</span>
+      </a>
+      <button class="sidebar-toggle" id="sidebarToggle" title="Toggle sidebar">☰</button>
+    </div>
+
+    <button class="btn-new-session" id="newSessionBtn">+ New Interview</button>
+
+    <div class="sidebar-section-label">Recent Sessions</div>
+    <div class="sessions-list" id="sessionsList">
+      <div class="sessions-empty">No sessions yet.<br/>Start a new interview!</div>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="ollama-status" id="ollamaStatus">
+        <span class="status-dot" id="statusDot"></span>
+        <span id="statusText">Checking Ollama...</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main content -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Top bar -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-role" id="topbarRole">No active session</span>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-icon" id="clearChatBtn" title="Clear chat">🗑</button>
+        <button class="btn-icon" id="uploadDocBtn" title="Upload document">📎</button>
+        <div class="doc-badges" id="docBadges"></div>
+      </div>
+    </header>
+
+    <!-- Welcome screen (shown when no session) -->
+    <div class="welcome-screen" id="welcomeScreen">
+      <div class="welcome-inner">
+        <div class="welcome-icon">🎯</div>
+        <h2>Ready to practice?</h2>
+        <p>Choose a role and start your mock interview session.<br/>Speak your answers or type them.</p>
+
+        <div class="role-picker">
+          <label>Target Role</label>
+          <input type="text" id="roleInput" placeholder="e.g. Senior Frontend Engineer" class="role-input" list="role-suggestions" />
+          <datalist id="role-suggestions">
+            <option value="Frontend Engineer" />
+            <option value="Backend Engineer" />
+            <option value="Full Stack Engineer" />
+            <option value="Data Scientist" />
+            <option value="Product Manager" />
+            <option value="DevOps Engineer" />
+            <option value="ML Engineer" />
+            <option value="UX Designer" />
+            <option value="Business Analyst" />
+          </datalist>
+        </div>
+
+        <button class="btn-start" id="startSessionBtn">Start Interview →</button>
+
+        <div class="upload-zone-mini" id="uploadZoneMini">
+          <span>📎 Drop resume or JD here (optional)</span>
+          <input type="file" id="fileInputHidden" accept=".txt,.pdf,.md" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat area (shown when session active) -->
+    <div class="chat-area hidden" id="chatArea">
+      <div class="chat-messages" id="chatMessages"></div>
+
+      <!-- Input bar -->
+      <div class="input-bar">
+        <button class="mic-btn" id="micBtn" title="Hold to speak">
+          <span class="mic-icon-inner" id="micIcon">🎙</span>
+        </button>
+        <div class="input-wrapper">
+          <textarea
+            id="textInput"
+            class="text-input"
+            placeholder="Type your answer or hold the mic to speak..."
+            rows="1"
+          ></textarea>
+        </div>
+        <button class="send-btn" id="sendBtn">Send ↵</button>
+      </div>
+
+      <!-- Voice status -->
+      <div class="voice-status hidden" id="voiceStatus">
+        <span class="pulse-ring"></span>
+        <span id="voiceStatusText">Listening...</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Upload modal -->
+  <div class="modal hidden" id="uploadModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3>Upload Document</h3>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="upload-zone" id="uploadZone">
+        <div class="upload-zone-content">
+          <div class="upload-zone-icon">📂</div>
+          <p>Drag & drop or click to upload</p>
+          <p class="upload-hint">Supports .txt, .md, .pdf (text-only)</p>
+        </div>
+        <input type="file" id="fileUpload" accept=".txt,.md,.pdf" />
+      </div>
+      <div class="uploaded-files" id="uploadedFiles"></div>
+      <button class="btn-primary modal-done" id="modalDone">Done</button>
+    </div>
+  </div>
+
+  <input type="file" id="fileInput" accept=".txt,.md,.pdf" style="display:none" />
+
+  <script src="/static/js/recorder.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>InterviewMentor — AI-Powered Interview Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Sora:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body class="landing-body">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-brand">
+      <span class="brand-icon">▶</span>
+      <span class="brand-text">InterviewMentor</span>
+    </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#tech">Tech Stack</a>
+    </div>
+    <a href="/app" class="btn-primary">Launch App</a>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      AI-Powered · Voice-Enabled · 100% Local
+    </div>
+    <h1 class="hero-title">
+      Ace your next interview<br />
+      <span class="gradient-text">with an AI mentor</span>
+    </h1>
+    <p class="hero-sub">
+      Practice mock interviews with real-time voice interaction. Powered by Ollama locally,
+      with Whisper STT and Edge TTS for a natural coaching experience.
+    </p>
+    <div class="hero-actions">
+      <a href="/app" class="btn-primary btn-lg">Start Practicing →</a>
+      <a href="#how" class="btn-ghost btn-lg">See How It Works</a>
+    </div>
+
+    <!-- Terminal Preview -->
+    <div class="hero-terminal">
+      <div class="term-bar">
+        <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+        <span class="term-title-sm">InterviewMentor — AI Coach</span>
+      </div>
+      <div class="term-preview">
+        <div class="tp-line sys">Session started for: <span class="hl-green">Senior Frontend Engineer</span></div>
+        <div class="tp-line ai"><span class="ai-lbl">[MENTOR]</span> Tell me about yourself and why you're interested in this role.</div>
+        <div class="tp-line usr"><span class="usr-lbl">[YOU]</span> I've been building React apps for 4 years...</div>
+        <div class="tp-line ai"><span class="ai-lbl">[MENTOR]</span> Great start! ✓ Clear background. → Next time add a specific impact metric.</div>
+        <div class="tp-line blink"><span class="cursor">▋</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section" id="features">
+    <h2 class="section-title">Everything you need to prepare</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon mic-icon">🎙</div>
+        <h3>Voice Interview</h3>
+        <p>Speak your answers naturally. Whisper transcribes your speech in real-time for a realistic interview simulation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon spk-icon">🔊</div>
+        <h3>AI Voice Coach</h3>
+        <p>Hear your mentor speak via Edge TTS with a natural male voice — Guy Neural. Like having a real coach by your side.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon brain-icon">🧠</div>
+        <h3>Local AI (Ollama)</h3>
+        <p>Powered by Llama 3.2 running locally via Ollama. 100% private — your interview data never leaves your machine.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon doc-icon">📄</div>
+        <h3>Resume-Aware</h3>
+        <p>Upload your resume and job description. The AI tailors questions and feedback specifically to your background.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon db-icon">💾</div>
+        <h3>Smart History</h3>
+        <p>SQLite stores your last 10 interview sessions. Older sessions auto-delete to keep things clean.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon star-icon">⭐</div>
+        <h3>STAR Feedback</h3>
+        <p>Get structured feedback using the STAR method after every answer — Situation, Task, Action, Result.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section section-dark" id="how">
+    <h2 class="section-title">How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Choose Your Role</h3>
+        <p>Select the job role you're targeting — frontend, backend, product, data science, and more.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Upload Docs</h3>
+        <p>Optionally upload your resume or job description for personalized, role-specific questions.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Practice with Voice</h3>
+        <p>Click the mic, answer out loud. Whisper transcribes, Ollama evaluates, Edge TTS responds.</p>
+      </div>
+      <div class="step-arrow">→</div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <h3>Get Feedback</h3>
+        <p>Receive structured coaching after every answer. Repeat until you're confident and ready.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section class="section" id="tech">
+    <h2 class="section-title">Built with local-first tech</h2>
+    <div class="tech-grid">
+      <div class="tech-pill">Python Flask</div>
+      <div class="tech-pill">Ollama llama3.2</div>
+      <div class="tech-pill">Whisper STT</div>
+      <div class="tech-pill">Edge TTS (Guy Neural)</div>
+      <div class="tech-pill">SQLite</div>
+      <div class="tech-pill">Vanilla JS</div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section cta-section">
+    <h2>Ready to land your dream job?</h2>
+    <p>Start a free mock interview right now. No sign-up, no cloud, 100% local.</p>
+    <a href="/app" class="btn-primary btn-xl">Launch InterviewMentor →</a>
+  </section>
+
+  <footer class="footer">
+    <span>InterviewMentor · 100% Local AI · Built with Flask + Ollama + Whisper + Edge TTS</span>
+  </footer>
+
+</body>
+</html>
